@@ -82,7 +82,6 @@ The source files have the following setup. Note that not all files are included 
 ├── netlify.toml
 ├── package.json
 ├── README.md
-├── tailwind.config.cjs
 └── tsconfig.json
 ```
 
