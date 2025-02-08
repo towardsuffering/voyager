@@ -23,7 +23,7 @@ export const faqData: FaqItem[] = [
 		answer: `Yes. 10% off.`,
 	},
 	{
-		question: 'Why should I hire you?',
+		question: 'What makes Chris Blogs worth hiring?',
 		answer: `I have 10+ years of industry experience combined with technical agility and a pair of masters degrees.`,
 	},
 	{
