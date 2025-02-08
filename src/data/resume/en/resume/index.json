@@ -1,80 +1,98 @@
 {
 	"diplomas": [
 		{
-			"title": "Master's in Computer Science",
-			"school": "Stanford University",
-			"year": 2020
+			"title": "MBA Music Business",
+			"school": "Middle Tennessee State University",
+			"year": 2024
 		},
 		{
-			"title": "Bachelor's in Software Engineering",
-			"school": "MIT",
-			"year": 2018
+			"title": "MS Data Analytics",
+			"school": "University of Colorado",
+			"year": 2023
+		},
+		{
+			"title": "BS Operations & Information Management",
+			"school": "University of Colorado",
+			"year": 2017
+		},
+		{
+			"title": "AA General Business",
+			"school": "Front Range Community College",
+			"year": 2014
 		}
+
 	],
 	"certifications": [
 		{
-			"title": "AWS Certified Solutions Architect",
+			"title": "Marketplace Simulations Certificate of Completion",
 			"year": 2022
 		},
 		{
-			"title": "Google Cloud Professional Developer",
-			"year": 2021
+			"title": "MBA Math Quantitative Sklills Course",
+			"year": 2020
 		}
 	],
 	"experience": [
 		{
-			"title": "Senior Software Engineer",
-			"company": "TechCorp",
+			"title": "E-Commerce Associate",
+			"company": "Kroger",
 			"companyImage": "./index/experience/0/companyImage.png",
-			"dates": "Jan 2021 - Present",
-			"location": "San Francisco, CA",
+			"dates": "April 2024 - Present",
+			"location": "Cincinnati, OH",
 			"responsibilities": [
-				"Led development of microservices architecture",
-				"Mentored junior developers and conducted code reviews",
-				"Implemented CI/CD pipelines reducing deployment time by 50%",
-				"Architected scalable cloud solutions using AWS"
+				"Select customer's online orders with 97% accuracy",
+				"Overcome people obstacles with safe trolly driving and a friendly attitude",
+				"Search inventory levels to indentify the number of units and deliveries for a specific product",
+				"Fulfull orders by delivering customer's groceries to their vechicles"
 			]
 		},
 		{
-			"title": "Technical Lead",
-			"company": "InnovateLabs",
+			"title": "Heart of House",
+			"company": "Velvet Taco",
 			"companyImage": "./index/experience/1/companyImage.png",
-			"dates": "Mar 2019 - Dec 2020",
-			"location": "New York, NY",
+			"dates": "April 2024 - Present",
+			"location": "Dallas, TX",
 			"responsibilities": [
-				"Managed team of 8 developers across multiple projects",
-				"Established coding standards and best practices",
-				"Reduced technical debt by 40% through strategic refactoring",
-				"Implemented agile methodologies improving team productivity"
+				"Provide professional cleaning services for front of house",
+				"Work late nights--serving our guests as one of the only late-night dining options in town",
+				"Operate the POS and collect tips"
 			]
 		}
 	],
 	"hardSkills": [
 		{
-			"skill": "JavaScript",
-			"percentage": 95
-		},
-		{
-			"skill": "TypeScript",
+			"skill": "Excel/OpenOffice",
 			"percentage": 90
 		},
 		{
-			"skill": "React",
-			"percentage": 92
+			"skill": "Python/R",
+			"percentage": 85
+		},
+		{
+			"skill": "MySQL/NoSQL",
+			"percentage": 85
+		},
+		{
+			"skill": "JavaScript/Node/HTML/CSS",
+			"percentage": 75
+		},
+		{
+			"skill": "Spark",
+			"percentage": 30
 		}
 	],
 	"softSkills": [
 		{
-			"skill": "Leadership",
-			"icon": "👑"
+			"skill": "Active Listening",
+			"icon": "👂"
 		},
 		{
-			"skill": "Communication",
-			"icon": "🗣️"
+			"skill": "Fact-Finding Questions",
+			"icon": "✅"
 		},
 		{
-			"skill": "Problem Solving",
-			"icon": "🧩"
+			"skill": "Remembering Names",
+			"icon": "☝️"
 		}
 	],
 	"languages": [
@@ -84,12 +102,9 @@
 		},
 		{
 			"language": "Spanish",
-			"level": 8
-		},
-		{
-			"language": "French",
-			"level": 6
+			"level": 4
 		}
+
 	],
 	"tools": [
 		{
@@ -99,34 +114,94 @@
 			"link": "https://astro.build"
 		},
 		{
-			"name": "Visual Studio Code",
+			"name": "Cursor",
 			"category": "Development",
-			"image": "./index/tools/1/image.png",
-			"link": "https://code.visualstudio.com"
+			"image": "./index/tools/1/cursor.svg",
+			"link": "https://www.cursor.com/"
 		},
 		{
-			"name": "Figma",
+			"name": "Adobe Creative Cloud",
 			"category": "Design",
-			"image": "./index/tools/2/image.png",
-			"link": "https://figma.com"
+			"image": "./index/tools/2/adobe.png",
+			"link": "https://www.adobe.com/creativecloud.html"
 		},
 		{
-			"name": "Adobe XD",
+			"name": "Adobe Express",
 			"category": "Design",
-			"image": "./index/tools/3/image.png",
-			"link": "https://adobe.com/products/xd"
+			"image": "./index/tools/3/express.png",
+			"link": "https://www.adobe.com/express/"
 		},
 		{
-			"name": "Webstorm",
-			"category": "Development",
-			"image": "./index/tools/4/image.png",
-			"link": "https://jetbrains.com/webstorm"
+			"name": "Adobe Premier Pro",
+			"category": "Design",
+			"image": "./index/tools/16/prem.png",
+			"link": "https://www.adobe.com/express/"
+		},
+		{
+			"name": "Pro Tools",
+			"category": "DAW",
+			"image": "./index/tools/4/pt.png",
+			"link": "https://www.avid.com/pro-tools"
 		},
 		{
 			"name": "Docker",
 			"category": "DevOps",
 			"image": "./index/tools/5/image.png",
 			"link": "https://docker.com"
+		},
+		{
+			"name": "AWS",
+			"category": "DevOps",
+			"image": "./index/tools/14/aws.png",
+			"link": "https://aws.amazon.com/"
+		},
+		{
+			"name": "Tailwind CSS",
+			"category": "Design",
+			"image": "./index/tools/7/tail.svg",
+			"link": "https://tailwindcss.com/"
+		},		{
+			"name": "Tableau",
+			"category": "Design",
+			"image": "./index/tools/15/tab.png",
+			"link": "https://www.tableau.com//"
+		},
+		{
+			"name": "OBS Studio",
+			"category": "Development",
+			"image": "./index/tools/8/obs.png",
+			"link": "https://obsproject.com/"
+		},
+		{
+			"name": "Speechify",
+			"category": "Development",
+			"image": "./index/tools/9/speechify.png",
+			"link": "https://speechify.com/"
+		},
+		{
+			"name": "Grammarly",
+			"category": "Development",
+			"image": "./index/tools/10/grammarly.png",
+			"link": "https://app.grammarly.com/"
+		},
+		{
+			"name": "Google AI Studio",
+			"category": "Development",
+			"image": "./index/tools/11/goog.png",
+			"link": "https://aistudio.google.com/"
+		},
+		{
+			"name": "Claude",
+			"category": "Development",
+			"image": "./index/tools/12/claude.png",
+			"link": "https://claude.ai/"
+		},
+		{
+			"name": "ChatGPT",
+			"category": "Development",
+			"image": "./index/tools/13/chat.png",
+			"link": "https://chatgpt.com"
 		}
+		
 	]
 }

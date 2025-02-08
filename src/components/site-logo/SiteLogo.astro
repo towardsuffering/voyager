@@ -1,33 +1,60 @@
 ---
-import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 // utils
 import { getLocaleFromUrl } from "@js/localeUtils";
-import { getTranslatedData } from "@js/translationUtils";
 
 // data
 const currLocale = getLocaleFromUrl(Astro.url);
-const siteData = getTranslatedData("siteData", currLocale);
+
+// No longer need siteData because we're hardcoding the name
+// import { getTranslatedData } from "@js/translationUtils";
+// const siteData = getTranslatedData("siteData", currLocale);
 
 // images
-import logo from "@images/site-logo.png";
+// import logo from "@images/site-logo.png";  No longer using the logo
 ---
 
 <a
-	class="primary-focus text-foreground flex h-10 items-center align-middle text-2xl font-bold"
+	class="primary-focus text-foreground flex items-center font-bold no-underline"
 	href={getRelativeLocaleUrl(currLocale)}
-	class=""
 >
+	<!--  Consider adding classes here for overall style like size, padding, etc. -->
+
+	<!-- Removed Image component -->
+	<!--  We're removing the image since we're using text now -->
 	<!-- <Image
 		src={logo}
-		alt="Cosmic Themes logo"
+		alt="Chris Blogs Logo"
 		loading="eager"
 		width={100}
 		height={100}
 		class="h-14 w-14"
 		aria-hidden="true"
 	/> -->
-	<div class="">{siteData.name}</div>
+
+	<div class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-gray-100">Chris</div>
+	<div class="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">Blogs</div>
+
+	<!--  The dot is now redundant
 	<span class="text-primary">.</span>
+	-->
 </a>
+
+<style>
+	a {
+		/* General styling for the link container.  Adjust to your liking */
+		display: flex;
+		align-items: center;
+		gap: 0.25rem; /* adjust for desired spacing between words */
+		padding: 0.5rem 1rem; /* Example padding. Adjust as needed */
+	}
+
+	/* Example for mobile responsiveness */
+	@media (max-width: 768px) {
+		a {
+			padding: 0.25rem 0.5rem;  /* smaller padding on smaller screens */
+			font-size: 1.25rem; /* Smaller default font size */
+		}
+	}
+</style>

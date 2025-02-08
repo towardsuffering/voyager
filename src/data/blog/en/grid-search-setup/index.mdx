@@ -1,0 +1,141 @@
+---
+title: How to Use Grid Search for Hyperparameter Tuning
+description: >-
+  Learn how to use Grid Search to find the best hyperparameters for your machine learning model.
+  Improve model performance with this powerful technique.
+draft: false
+authors:
+  - main-author
+pubDate: 2025-02-07
+heroImage: ../grid-search-setup/gs.png
+categories:
+  - machine-learning
+  - python
+---
+import TextHighlights from '@components/highlights/TextHighlights.astro'
+
+# How to Use Grid Search for Hyperparameter Tuning
+
+## 1. Introduction
+
+In machine learning, selecting optimal hyperparameters is crucial to maximize your model's performance. <TextHighlights>Grid Search</TextHighlights> is a systematic approach to hyperparameter tuning that exhaustively evaluates every combination in a predefined set. In this guide, we'll walk through setting up and implementing Grid Search using Python's scikit-learn library.
+
+## 2. What is Grid Search?
+
+Grid Search is an approach to hyperparameter optimization where you:
+
+- **Define** a grid of hyperparameter values.
+- **Evaluate** model performance using cross-validation for each combination.
+- **Select** the combination that produces the best performance.
+
+### Advantages
+- **Exhaustiveness:** Guarantees finding the best combination within the specified grid.
+- **Simplicity:** Easy to understand and implement.
+
+### Limitations
+- **Computational Cost:** Can be very resource-intensive with large grids.
+- **Scalability:** Not ideal when many hyperparameters or wide ranges are involved.
+
+## 3. Setting Up Your Environment
+
+Before diving in, ensure you have scikit-learn installed:
+
+```python
+pip install scikit-learn
+```
+
+## 4. Implementing Grid Search
+
+Let's demonstrate Grid Search with a practical example using an SVM classifier on the Iris dataset.
+
+### 4.1. Importing Required Libraries
+```python
+from sklearn import datasets
+from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.svm import SVC
+```
+
+### 4.2. Loading the Dataset
+
+```python
+# Load the Iris dataset
+iris = datasets.load_iris()
+X, y = iris.data, iris.target
+#
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+
+### 4.3. Defining the Hyperparameter Grid
+
+```python
+ # Define a grid of hyperparameter values
+ param_grid = {
+     'C': [0.1, 1, 10, 100],
+     'gamma': [1, 0.1, 0.01, 0.001],
+     'kernel': ['rbf']
+ }
+```
+
+### 4.4. Running Grid Search with Cross-Validation
+```python
+# Initialize the SVM classifier
+svm = SVC()
+
+# Set up GridSearchCV with 5-fold cross-validation
+grid_search = GridSearchCV(estimator=svm, param_grid=param_grid, cv=5, verbose=2, n_jobs=-1)
+
+# Fit GridSearchCV on the training data
+grid_search.fit(X_train, y_train)
+```
+
+### 4.5. Evaluating the Results
+```python
+# Output the best hyperparameters and corresponding score
+print("Best parameters found:", grid_search.best_params_)
+print("Best cross-validation score:", grid_search.best_score_)
+
+# Evaluate the best model on the test set
+test_score = grid_search.score(X_test, y_test)
+print("Test set score:", test_score)
+```
+## 5. Visualizing Grid Search Results
+
+Visualizing performance across different hyperparameters can offer insights into how changes affect your model. Below is an example using matplotlib to plot cross-validation scores:
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Extract mean test scores from grid search results
+results = grid_search.cv_results_
+mean_test_scores = results['mean_test_score']
+
+# Create a scatter plot to visualize the scores
+plt.figure(figsize=(8, 6))
+plt.scatter(range(len(mean_test_scores)), mean_test_scores, c='blue')
+plt.title('Grid Search Cross-Validation Scores')
+plt.xlabel('Hyperparameter Combination Index')
+plt.ylabel('Mean Test Score')
+plt.grid(True)
+plt.show()
+
+```
+
+## Key Takeaways
+- Exhaustive Search: Grid Search evaluates every combination in the hyperparameter grid, ensuring you find the best configuration.
+- Cross-Validation: Integrating cross-validation provides a more robust evaluation of model performance.
+- Trade-Offs: While thorough, Grid Search can be computationally expensive. Consider alternatives like Randomized Search for larger grids.
+- Visualization: Plotting results helps to understand the impact of different hyperparameters on model performance.
+
+## 7. Conclusion and Next Steps
+
+Grid Search is a powerful technique for hyperparameter tuning, offering a systematic way to enhance your machine learning models. By exploring a range of hyperparameters, you can fine-tune your model to achieve superior performance.
+
+Next Steps:
+
+- **Experiment**: Apply Grid Search to different algorithms and datasets.
+- **Refine**: Start with a coarse grid and narrow your search around promising hyperparameter values.
+- **Explore Alternatives**: For very large search spaces, look into methods like Randomized Search or Bayesian Optimization.
+
+Happy tuning! Balance thoroughness with computational efficiency to get the best out of your models.

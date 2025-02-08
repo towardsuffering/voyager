@@ -1,0 +1,84 @@
+---
+title: How to Use Randomized Search for Hyperparameter Tuning
+description: >-
+  Discover how to apply Randomized Search for hyperparameter optimization in your machine learning models.
+draft: false
+authors:
+  - main-author
+pubDate: 2025-02-07
+heroImage: ../randomized-search-setup/random.png
+categories:
+  - machine-learning
+  - python
+---
+
+import TextHighlights from '@components/highlights/TextHighlights.astro'
+
+# How to Use Randomized Search for Hyperparameter Tuning
+
+## 1. Introduction
+
+<TextHighlights>Randomized Search</TextHighlights> is a faster alternative to Grid Search. Instead of exhaustively evaluating every combination, it samples parameter settings from a specified distribution.
+
+## 2. What is Randomized Search?
+
+Randomized Search randomly selects combinations from a hyperparameter space and evaluates each using cross-validation.
+
+### Advantages
+- **Speed:** Fewer evaluations mean quicker results.
+- **Flexibility:** Can explore a larger search space without prohibitive cost.
+
+### Limitations
+- **Stochastic Results:** The optimal combination may be missed if too few iterations are run.
+
+## 3. Implementing Randomized Search with scikit-learn
+
+### 3.1. Importing Required Libraries
+```python
+from sklearn import datasets
+from sklearn.model_selection import RandomizedSearchCV, train_test_split
+from sklearn.svm import SVC
+import numpy as np
+```
+
+### 3.2. Loading the Dataset
+
+```python
+iris = datasets.load_iris()
+X, y = iris.data, iris.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+```
+
+### 3.3. Defining the Hyperparameter Distribution
+
+```python
+param_dist = {
+    'C': np.logspace(-2, 2, 100),
+    'gamma': np.logspace(-3, 1, 100),
+    'kernel': ['rbf']
+}
+
+```
+
+### 3.4. Running Randomized Search with Cross-Validation
+```python
+svm = SVC()
+random_search = RandomizedSearchCV(estimator=svm, param_distributions=param_dist, n_iter=50, cv=5, verbose=2, n_jobs=-1)
+random_search.fit(X_train, y_train)
+
+```
+
+### 3.5. Evaluating the Results
+```python
+print("Best parameters found:", random_search.best_params_)
+print("Best cross-validation score:", random_search.best_score_)
+test_score = random_search.score(X_test, y_test)
+print("Test set score:", test_score)
+```
+
+## 4. Conclusion
+
+Randomized Search offers a practical balance between computational efficiency and performance. Adjust the number of iterations to best suit your dataset and model complexity.
+
+Happy tuning!
