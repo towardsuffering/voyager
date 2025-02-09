@@ -1,6 +1,6 @@
 ---
 /**
- * * pricing sections with toggle for monthly or yearly payments
+ * * pricing sections with toggle for hourly or yearly payments
  * This is designed for 2 pricing items, but can be modified to support more
  */
 import { getRelativeLocaleUrl } from "astro:i18n";
@@ -23,7 +23,7 @@ interface PricingFeature {
 
 interface PricingPlan {
 	name: string;
-	monthlyPrice: number;
+	hourlyPrice: number;
 	yearlyPrice: number;
 	description: string;
 	isPopular?: boolean;
@@ -32,8 +32,8 @@ interface PricingPlan {
 
 const plans: PricingPlan[] = [
 	{
-		name: "Basic",
-		monthlyPrice: 40,
+		name: "Performance",
+		hourlyPrice: 40,
 		yearlyPrice: 400,
 		description: "Perfect for Small Projects and Individuals",
 		features: [
@@ -47,7 +47,7 @@ const plans: PricingPlan[] = [
 	},
 	{
 		name: "Professional",
-		monthlyPrice: 300,
+		hourlyPrice: 300,
 		yearlyPrice: 3000,
 		description: "Ideal for Startups and Small Businesses",
 		isPopular: true,
@@ -86,7 +86,7 @@ const plans: PricingPlan[] = [
 		</div>
 
 		<div class="mb-16 flex items-center justify-center gap-4">
-			<span class="description">Monthly</span>
+			<span class="description">hourly</span>
 			<Switch variant="primary" id="pricing-two-cards__toggle" size="lg" />
 			<span class="description">Yearly <span class="text-primary text-sm">(Save 20%)</span></span>
 		</div>
@@ -114,9 +114,11 @@ const plans: PricingPlan[] = [
 
 						<div class="mb-8 text-center">
 							<div class="relative">
-								<p class="pricing-monthly text-primary text-5xl font-bold md:text-6xl">
-									${plan.monthlyPrice}
+								<p class="pricing-hourly text-primary text-5xl font-bold md:text-6xl">
+									${plan.hourlyPrice}
 									<span class="text-base-500 text-2xl font-normal">/mo</span>
+
+									<span class="text-base-500 text-2xl font-normal">/hr</span>
 								</p>
 								<p class="pricing-yearly text-primary hidden text-5xl font-bold md:text-6xl">
 									${plan.yearlyPrice}
@@ -159,17 +161,17 @@ const plans: PricingPlan[] = [
 	const setupPricingToggle = () => {
 		const pricingSection = document.getElementById("pricing-two-cards");
 		const toggle = pricingSection?.querySelector("#pricing-two-cards__toggle");
-		const monthlyPrices = pricingSection?.querySelectorAll(".pricing-monthly");
+		const hourlyPrices = pricingSection?.querySelectorAll(".pricing-hourly");
 		const yearlyPrices = pricingSection?.querySelectorAll(".pricing-yearly");
 
-		if (!toggle || !monthlyPrices || !yearlyPrices) return;
+		if (!toggle || !hourlyPrices || !yearlyPrices) return;
 
 		// Create a new MutationObserver to watch for aria-checked changes
 		const observer = new MutationObserver((mutations) => {
 			mutations.forEach((mutation) => {
 				if (mutation.type === "attributes" && mutation.attributeName === "aria-checked") {
 					const isYearly = toggle.getAttribute("aria-checked") === "true";
-					monthlyPrices.forEach((price) => price.classList.toggle("hidden", isYearly));
+					hourlyPrices.forEach((price) => price.classList.toggle("hidden", isYearly));
 					yearlyPrices.forEach((price) => price.classList.toggle("hidden", !isYearly));
 				}
 			});
