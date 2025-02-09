@@ -5,7 +5,7 @@ const siteData: SiteDataProps = {
 	name: "French Voyager",
 	// Your website's title and description (meta fields)
 	title:
-		"Voyager - a standout portfolio and freelancing template built with Astro and Tailwind CSS",
+		"Voyager - a standout portfolio and blog",
 	description:
 		"Get your new startup website up and running quickly with our beautiful website theme designed using Astro v5 and Tailwind CSS v4. Perfect for freelancers, developers, startups, and personal use.",
 

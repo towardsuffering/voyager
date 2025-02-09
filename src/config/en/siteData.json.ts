@@ -5,7 +5,7 @@ const siteData: SiteDataProps = {
 	name: "Chris Blogs",
 	// Your website's title and description (meta fields)
 	title:
-		"Chris Blogs - a standout portfolio and blog built with Astro and Tailwind CSS",
+		"Chris Blogs - a standout portfolio and blog",
 	description:
 	"📊 Analytics. 🌐 Web. 🎺 Music. 🏬 Markets.",
 	// Your information for blog post purposes
