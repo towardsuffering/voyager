@@ -1,0 +1,13 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: string;
+  maxWidth?: string;
+}
+const { src, alt, width = "100%", maxWidth = "600px" } = Astro.props;
+---
+
+<div class="flex justify-center">
+  <img src={src} alt={alt} class="mx-auto" style={{ width, maxWidth }} />
+</div>
