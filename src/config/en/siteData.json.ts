@@ -5,9 +5,9 @@ const siteData: SiteDataProps = {
 	name: "Chris Blogs",
 	// Your website's title and description (meta fields)
 	title:
-		"Chris Blogs - a standout portfolio and blog",
+		"Chris Blogs - 📊 Analytics. 🌐 Web. 🎺 Music. 🏬 Markets.",
 	description:
-	"📊 Analytics. 🌐 Web. 🎺 Music. 🏬 Markets.",
+	"A standout portfolio and blog",
 	// Your information for blog post purposes
 	author: {
 		name: "Chris Rotunno",
