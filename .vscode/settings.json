@@ -1,0 +1,19 @@
+{
+    "cSpell.words": [
+        "Abouut",
+        "buuilding",
+        "scikit",
+        "Scikit",
+        "scikitlearn",
+        "sklearn",
+        "woul"
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:voyager}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    }
+}
