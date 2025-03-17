@@ -33,7 +33,7 @@ import InterVariable from "@fontsource-variable/inter/files/inter-latin-wght-nor
 ---
 
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- local font preload for better performance -->
 <link rel="preload" href={ArchivoBlack} as="font" type="font/woff2" crossorigin="anonymous" />
@@ -50,25 +50,25 @@ import InterVariable from "@fontsource-variable/inter/files/inter-latin-wght-nor
 <meta name="generator" content={Astro.generator} />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNPDEKZ4Z"></script>
+<script is:inline>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+	gtag('config', 'G-SNPDEKZ4Z', {
+		page_path: window.location.pathname
+	});
+</script>
+
 <!-- Theme change setup. Run early to eliminate Flash of inAccurate coloR Theme (FART) -->
 <script is:inline>
 	function initTheme() {
 		let colorTheme = localStorage.getItem("colorTheme");
 		if (!colorTheme) {
-			// set light theme initially
 			document.documentElement.classList.remove("dark");
 			localStorage.setItem("colorTheme", "light");
-
-			// if no color theme yet, use the users preferences (uncomment the below code, and comment out the above code to use this instead)
-			// if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-			// 	document.documentElement.classList.add("dark");
-			// 	localStorage.setItem("colorTheme", "dark");
-			// } else {
-			// 	document.documentElement.classList.remove("dark");
-			// 	localStorage.setItem("colorTheme", "light");
-			// }
 		} else {
-			// If there is, assign the theme based on the value in local storage
 			if (colorTheme === "dark") {
 				document.documentElement.classList.add("dark");
 			} else if (colorTheme === "light") {
@@ -77,10 +77,7 @@ import InterVariable from "@fontsource-variable/inter/files/inter-latin-wght-nor
 		}
 	}
 
-	// runs on initial page load
 	initTheme();
-
-	// runs on view transitions navigation
 	document.addEventListener("astro:after-swap", initTheme);
 </script>
 
