@@ -58,17 +58,23 @@ const currLocale = getLocaleFromUrl(Astro.url);
 			noindex={noindex}
 		/>
 		<!-- Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNPDEKZ4Z"></script>
 		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){ dataLayer.push(arguments); }
-			gtag('js', new Date());
-			gtag('config', 'G-SNPDEKZ4Z', { page_path: window.location.pathname });
-
-			// Handle Astro's View Transitions (Single Page Navigation)
-			document.addEventListener("astro:after-swap", () => {
-				gtag('config', 'G-SNPDEKZ4Z', { page_path: window.location.pathname });
-			});
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){ dataLayer.push(arguments); }
+		gtag('js', new Date());
+		
+		function sendPageView() {
+			console.log("GA Page View Triggered: ", window.location.pathname);
+			gtag('event', 'page_view', { page_path: window.location.pathname });
+		}
+		
+		// ✅ Force page view on initial load
+		sendPageView();
+		
+		// ✅ Ensure GA tracks page views on Astro View Transitions
+		document.addEventListener("astro:after-swap", () => {
+			sendPageView();
+		});
 		</script>
 
 
