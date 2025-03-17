@@ -57,7 +57,6 @@ const currLocale = getLocaleFromUrl(Astro.url);
 			postFrontmatter={postFrontmatter ? postFrontmatter : undefined}
 			noindex={noindex}
 		/>
-
 		<!-- Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNPDEKZ4Z"></script>
 		<script is:inline>
@@ -71,11 +70,12 @@ const currLocale = getLocaleFromUrl(Astro.url);
 				gtag('config', 'G-SNPDEKZ4Z', { page_path: window.location.pathname });
 			});
 		</script>
-	</head>
-	<body id="body">
-		<!-- Cookie Consent -->
-		<!-- <CookieConsent /> -->
 
+
+	</head>
+	<body id="body" class="">
+		<!-- put cookie consent first so it is seen first by screen readers -->
+		<!-- <CookieConsent /> -->
 		<div class="min-h-[100lvh]">
 			<Nav />
 			<main class="">
@@ -85,14 +85,15 @@ const currLocale = getLocaleFromUrl(Astro.url);
 		<Footer />
 
 		<!-- Scroll animations -->
-		<script is:inline>
+		<script>
+			import siteSettings from "@config/siteSettings.json";
 			import AOS from "@js/aos/aos";
 
 			if (siteSettings.useAnimations === true) {
-				// Runs on initial page load
+				// runs on initial page load
 				AOS.init({ distance: 40, duration: 0.9, once: true });
 
-				// Runs on view transitions navigation
+				// runs on view transitions navigation
 				document.addEventListener("astro:after-swap", AOS.refreshHard);
 			}
 		</script>
