@@ -3,7 +3,7 @@
  * * pricing sections with toggle for monthly or yearly payments
  * This is designed for 3 pricing items, but can be modified to support more
  */
-import { getRelativeLocaleUrl } from "astro:i18n";
+ import { getRelativeLocaleUrl } from "astro:i18n";
 import { Icon } from "astro-icon/components";
 
 // components
@@ -31,46 +31,48 @@ interface PricingPlan {
 }
 
 const plans: PricingPlan[] = [
-	{
-		name: "Basic",
-		monthlyPrice: 29,
-		yearlyPrice: 99,
-		description: "Essential legal forms & workflow templates for freelancers and small businesses.",
-		features: [
-			{ text: "Non-Disclosure Agreement (NDA) Template", included: true },
-			{ text: "Freelancer/Consulting Contract", included: true },
-			{ text: "Data Science Workflow Template", included: true },
-			{ text: "Basic KPI Dashboard (Google Sheets)", included: true },
-			{ text: "Instant Access & Secure Download Link", included: true }
-		]
-	},
-	{
-		name: "Pro",
-		monthlyPrice: 59,
-		yearlyPrice: 179,
-		description: "Automation tools & advanced analytics for startups and small businesses.",
-		isPopular: true,
-		features: [
-			{ text: "Everything in Basic Tier", included: true },
-			{ text: "1 Automation Script (Python/SQL)", included: true },
-			{ text: "Advanced KPI Dashboard (Google Sheets)", included: true },
-			{ text: "1x Consulting Call with Chris (30 min)", included: true },
-			{ text: "Members-Only Blog & Training Guides", included: true }
-		]
-	},
-	{
-		name: "Enterprise",
-		monthlyPrice: 199,
-		yearlyPrice: 399,
-		description: "Premium 1-on-1 consulting & fully customized data solutions for businesses.",
-		features: [
-			{ text: "Everything in Pro Tier", included: true },
-			{ text: "Custom Data Automation Setup", included: true },
-			{ text: "1-on-1 Business Strategy Consulting (2x per month)", included: true },
-			{ text: "Priority Email Support (12-hour response)", included: true }
-		]
-	}
+    {
+        name: "ML Career Starter",
+        monthlyPrice: 49,
+        yearlyPrice: 99,
+        description: "Instant access to essential ML career resources and templates.",
+        features: [
+            { text: "ML Resume Template Pack (5 proven formats)", included: true },
+            { text: "AI Skills Assessment Worksheet", included: true },
+            { text: "2023 ML Industry Trends Report", included: true },
+            { text: "Beginner ML Project Portfolio Templates", included: true },
+            { text: "30-minute consultation by request", included: true },
+        ]
+    },
+    {
+        name: "ML Professional Package",
+        monthlyPrice: 149,
+        yearlyPrice: 299,
+        description: "Complete toolkit for ML-focused career advancement with proven resources.",
+        isPopular: true,
+        features: [
+            { text: "Everything in ML Career Starter", included: true },
+            { text: "ML Career Advancement Blueprint (PDF)", included: true },
+            { text: "Technical ML Interview Question Library", included: true },
+            { text: "AI Tools Implementation Guide (15 industries)", included: true },
+            { text: "45-minute consultation by request", included: true },
+        ]
+    },
+    {
+        name: "ML Innovation Leader",
+        monthlyPrice: 299,
+        yearlyPrice: 599,
+        description: "Premium ML leadership resources for business transformation.",
+        features: [
+            { text: "Everything in ML Professional Package", included: true },
+            { text: "ML Business Strategy Playbook", included: true },
+            { text: "AI Team Development Framework", included: true },
+            { text: "ML Implementation Case Studies (12 examples)", included: true },
+            { text: "Two 45-minute consultations by request", included: true },
+        ]
+    }
 ];
+
 
 ---
 
@@ -79,14 +81,14 @@ const plans: PricingPlan[] = [
 	class="bg-base-100 dark:bg-background text-foreground relative py-16 md:py-32"
 >
 	<div class="site-container">
-		<h2 class="h2 mb-4 text-center">Pricing Plans</h2>
+		<h2 class="h2 mb-4 text-center">Accelerate Your Career With ML</h2>
 		<p class="description mb-16 text-center text-lg">Customer satisfaction is <span style="font-weight: bold; color: #0066ff; text-transform: uppercase;">guaranteed</span>  <strong style="text-decoration: underline;">or your money back</strong> 💸</p>
 
-		<div class="mb-16 flex items-center justify-center gap-4">
+		<!-- <div class="mb-16 flex items-center justify-center gap-4">
 			<span class="description">Hourly</span>
 			<Switch variant="primary" id="pricing-three-cards__toggle" size="lg" />
 			<span class="description">Monthly <span class="text-primary text-sm">(Save 20%)</span></span>
-		</div>
+		</div> -->
 
 		<div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-3">
 			{
@@ -115,7 +117,7 @@ const plans: PricingPlan[] = [
 							<div class="relative">
 								<p class="pricing-monthly text-primary text-4xl font-bold">
 									${plan.monthlyPrice}
-									<span class="text-base-500 text-lg font-normal">/hr</span>
+									<span class="text-base-500 text-lg font-normal">One-Time Payment</span>
 								</p>
 								<p class="pricing-yearly text-primary hidden text-4xl font-bold">
 									${plan.yearlyPrice}
