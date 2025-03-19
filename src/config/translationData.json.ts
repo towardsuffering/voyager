@@ -53,7 +53,8 @@ export const dataTranslations = {
 export const textTranslations = {
 	en: {
 		hero_text: "Crafting Digital Experiences",
-		hero_description: `Assisting individuals, teams, and businesses with innovation and organization through my experience in full-stack web development, data analytics, and music tech—delivering satisfied customers and impactful results.`,
+		hero_description: `Helping businesses structure their data, automate workflows, and build products efficiently.
+`,
 		back_to_all_posts: "Back to all posts",
 		updated: "Updated",
 		share_this_article: "Share this article",

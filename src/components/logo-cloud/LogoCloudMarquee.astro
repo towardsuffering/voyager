@@ -10,15 +10,15 @@
 
 import { Icon } from "astro-icon/components";
 ---
-
+ 
 <section
 	id="logo-cloud-marquee"
 	class="bg-base-100 dark:bg-background dark:border-base-900 py-16 md:py-20 dark:border-y"
 >
 	<div class="mx-auto max-w-xl px-4 text-center">
-		<h2 class="h3">Trusted by Industry Leaders</h2>
+		<h2 class="h3">Proven Industry Experience</h2>
 		<p class="description mt-4 text-base opacity-80">
-			Join dozens of companies improving their conversion rates
+			Delivering results for recognized brands across multiple sectors
 		</p>
 	</div>
 	<div class="relative mx-auto max-w-[2000px] overflow-hidden px-4">
@@ -36,25 +36,22 @@ import { Icon } from "astro-icon/components";
 		<div class="logo-marquee relative mt-12 flex gap-32 overflow-hidden">
 			<!-- Each animate-marquee section needs to have the exact same icons. Just do one then copy / paste -->
 			<div class="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-32">
-				<Icon name="logos/astro" class="logo py-2" aria-label="logo" />
+				<Icon name="logos/kroger" class="logo logo-kroger" aria-label="logo" />
 
-				<Icon name="logos/spotify" class="logo" aria-label="logo" />
+				<Icon name="logos/walgreens" class="logo" aria-label="logo" />
 
-				<Icon name="logos/framer" class="logo" aria-label="logo" />
+				<Icon name="logos/wf" class="logo" aria-label="logo" />
 
-				<Icon name="logos/dribbble" class="logo" aria-label="logo" />
+				<Icon name="logos/velvet" class="logo" aria-label="logo" />
 
-				<Icon name="logos/sanity" class="logo py-2" aria-label="logo" />
+				<Icon name="logos/intrinio" class="logo py-2" aria-label="logo" />
 
-				<Icon name="logos/contentfull" class="logo" aria-label="logo" />
+				<Icon name="logos/socrates" class="logo" aria-label="logo" style="color: #303b4d;" />
 
-				<Icon name="logos/github" class="logo" aria-label="logo" />
+				<Icon name="logos/CU" class="logo" aria-label="logo" />
 
-				<Icon name="logos/notion" class="logo" aria-label="logo" />
+				<Icon name="logos/mt" class="logo" aria-label="logo" />
 
-				<Icon name="logos/adobe" class="logo" aria-label="logo" />
-
-				<Icon name="logos/zoom" class="logo" aria-label="logo" />
 			</div>
 
 			<!-- Each animate-marquee section needs to have the exact same icons. Just do one then copy / paste -->
@@ -62,35 +59,46 @@ import { Icon } from "astro-icon/components";
 				aria-hidden="true"
 				class="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-32"
 			>
-				<Icon name="logos/astro" class="logo py-2" aria-label="logo" />
+				<Icon name="logos/kroger" class="logo logo-kroger" aria-label="logo" />
 
-				<Icon name="logos/spotify" class="logo" aria-label="logo" />
+				<Icon name="logos/walgreens" class="logo" aria-label="logo" />
 
-				<Icon name="logos/framer" class="logo" aria-label="logo" />
+				<Icon name="logos/wf" class="logo" aria-label="logo" />
 
-				<Icon name="logos/dribbble" class="logo" aria-label="logo" />
+				<Icon name="logos/velvet" class="logo" aria-label="logo" />
 
-				<Icon name="logos/sanity" class="logo py-2" aria-label="logo" />
+				<Icon name="logos/intrinio" class="logo py-2" aria-label="logo" />
 
-				<Icon name="logos/contentfull" class="logo" aria-label="logo" />
+				<Icon name="logos/socrates" class="logo" aria-label="logo" style="color: #303b4d;" />
 
-				<Icon name="logos/github" class="logo" aria-label="logo" />
+				<Icon name="logos/CU" class="logo" aria-label="logo" />
 
-				<Icon name="logos/notion" class="logo" aria-label="logo" />
-
-				<Icon name="logos/adobe" class="logo" aria-label="logo" />
-
-				<Icon name="logos/zoom" class="logo" aria-label="logo" />
+				<Icon name="logos/mt" class="logo" aria-label="logo" />
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	@import "tailwindcss/theme" theme(reference);
-	@import "@/styles/tailwind-theme.css" theme(reference);
+  @import "tailwindcss/theme" theme(reference);
+  @import "@/styles/tailwind-theme.css" theme(reference);
 
-	.logo {
-		@apply mx-auto h-10 w-auto opacity-60 transition-opacity duration-300 hover:opacity-100;
-	}
+  .logo {
+    @apply mx-auto h-8 w-auto opacity-60 transition-opacity duration-300 hover:opacity-100;
+    max-width: 145px; /* Add this to constrain extra-wide logos */
+  }
+  
+  /* Add these new classes for specific logo types */
+  .logo-wide {
+    height: 25px !important;
+  }
+  
+  .logo-square {
+    height: 35px !important;
+  }
+
+  .logo-kroger {
+  padding: 5px;
+  height: 45px !important; /* Increased height to compensate for the cut-off */
+}
 </style>

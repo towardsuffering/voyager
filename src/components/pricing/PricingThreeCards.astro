@@ -33,49 +33,45 @@ interface PricingPlan {
 const plans: PricingPlan[] = [
 	{
 		name: "Basic",
-		monthlyPrice: 15,
-		yearlyPrice: 145,
-		description: "Perfect for Small Projects and Individuals",
+		monthlyPrice: 29,
+		yearlyPrice: 99,
+		description: "Essential legal forms & workflow templates for freelancers and small businesses.",
 		features: [
-			{ text: "Website Development", included: true },
-			{ text: "Weekly Meetings", included: true },
-			{ text: "Data Gathering", included: true },
-			{ text: "Optimize operations with seamless process mapping", included: true },
-			{ text: "Memo reports", included: true },
-			{ text: "Descriptive Analytics", included: true }
-		],
+			{ text: "Non-Disclosure Agreement (NDA) Template", included: true },
+			{ text: "Freelancer/Consulting Contract", included: true },
+			{ text: "Data Science Workflow Template", included: true },
+			{ text: "Basic KPI Dashboard (Google Sheets)", included: true },
+			{ text: "Instant Access & Secure Download Link", included: true }
+		]
 	},
 	{
 		name: "Pro",
-		monthlyPrice: 60,
-		yearlyPrice: 575,
-		description: "Ideal for Startups and Small Businesses",
+		monthlyPrice: 59,
+		yearlyPrice: 179,
+		description: "Automation tools & advanced analytics for startups and small businesses.",
 		isPopular: true,
 		features: [
-			{ text: "Website Development", included: true },
-			{ text: "Weekly Meetings", included: true },
-			{ text: "Data Gathering", included: true },
-			{ text: "Optimize operations with seamless process mapping", included: true },
-			{ text: "Memo reports", included: true },
-			{ text: "Descriptive Analytics", included: true },
-			{ text: "Prescriptive Analytics", included: true },
-			{ text: "Predictive Analytics", included: true },
-		],
+			{ text: "Everything in Basic Tier", included: true },
+			{ text: "1 Automation Script (Python/SQL)", included: true },
+			{ text: "Advanced KPI Dashboard (Google Sheets)", included: true },
+			{ text: "1x Consulting Call with Chris (30 min)", included: true },
+			{ text: "Members-Only Blog & Training Guides", included: true }
+		]
 	},
 	{
 		name: "Enterprise",
-		monthlyPrice: 400,
-		yearlyPrice: 3800,
-		description: "For Growing Businesses",
+		monthlyPrice: 199,
+		yearlyPrice: 399,
+		description: "Premium 1-on-1 consulting & fully customized data solutions for businesses.",
 		features: [
-			{ text: "Everything in Pro plus...", included: true },
-			{ text: "Bi-Weekly Meetings", included: true },
-			{ text: "Priority 24/7 Support", included: true },
-			{ text: "Custom Integrations", included: true },
-			{ text: "Three Advanced Analytics Dashboards", included: true }
-		],
-	},
+			{ text: "Everything in Pro Tier", included: true },
+			{ text: "Custom Data Automation Setup", included: true },
+			{ text: "1-on-1 Business Strategy Consulting (2x per month)", included: true },
+			{ text: "Priority Email Support (12-hour response)", included: true }
+		]
+	}
 ];
+
 ---
 
 <section
@@ -84,12 +80,12 @@ const plans: PricingPlan[] = [
 >
 	<div class="site-container">
 		<h2 class="h2 mb-4 text-center">Pricing Plans</h2>
-		<p class="description mb-16 text-center text-lg">Choose the perfect plan for your needs</p>
+		<p class="description mb-16 text-center text-lg">Customer satisfaction is <span style="font-weight: bold; color: #0066ff; text-transform: uppercase;">guaranteed</span>  <strong style="text-decoration: underline;">or your money back</strong> 💸</p>
 
 		<div class="mb-16 flex items-center justify-center gap-4">
-			<span class="description">Monthly</span>
+			<span class="description">Hourly</span>
 			<Switch variant="primary" id="pricing-three-cards__toggle" size="lg" />
-			<span class="description">Yearly <span class="text-primary text-sm">(Save 20%)</span></span>
+			<span class="description">Monthly <span class="text-primary text-sm">(Save 20%)</span></span>
 		</div>
 
 		<div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-3">
@@ -119,11 +115,11 @@ const plans: PricingPlan[] = [
 							<div class="relative">
 								<p class="pricing-monthly text-primary text-4xl font-bold">
 									${plan.monthlyPrice}
-									<span class="text-base-500 text-lg font-normal">/mo</span>
+									<span class="text-base-500 text-lg font-normal">/hr</span>
 								</p>
 								<p class="pricing-yearly text-primary hidden text-4xl font-bold">
 									${plan.yearlyPrice}
-									<span class="text-base-500 text-lg font-normal">/yr</span>
+									<span class="text-base-500 text-lg font-normal">/mo</span>
 								</p>
 							</div>
 						</div>
