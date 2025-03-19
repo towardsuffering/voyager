@@ -1,23 +1,54 @@
 ---
-// components
+// ContactForm.astro
 import Button from "@components/button/Button.astro";
 import { Label } from "@/components/starwind/label";
 import { Input, InputWrapper } from "@/components/starwind/input";
 import { Textarea } from "@/components/starwind/textarea";
 ---
 
-<form class="space-y-8">
-	<InputWrapper>
-		<Label for="name">Name</Label>
-		<Input name="name" type="text" />
-	</InputWrapper>
-	<InputWrapper>
-		<Label for="email">Email</Label>
-		<Input required name="email" type="email" />
-	</InputWrapper>
-	<InputWrapper>
-		<Label for="message">Message</Label>
-		<Textarea name="message" required rows="4" />
-	</InputWrapper>
-	<Button type="submit" class="w-full">Send Message</Button>
+<form 
+  id="contact-form" 
+  name="contact" 
+  method="POST" 
+  netlify 
+  netlify-honeypot="bot-field"
+  data-netlify="true"
+  class="space-y-8"
+>
+  <!-- Hidden input required for Netlify -->
+  <input type="hidden" name="form-name" value="contact" />
+  
+  <!-- Honeypot field for spam prevention -->
+  <div class="hidden">
+    <label>
+      Don’t fill this out if you're human: 
+      <input name="bot-field" />
+    </label>
+  </div>
+
+  <!-- Name Input -->
+  <InputWrapper>
+    <Label for="name">Name</Label>
+    <Input name="name" type="text" id="name" required />
+  </InputWrapper>
+
+  <!-- Email Input -->
+  <InputWrapper>
+    <Label for="email">Email</Label>
+    <Input name="email" type="email" id="email" required />
+  </InputWrapper>
+
+  <!-- Message Input -->
+  <InputWrapper>
+    <Label for="message">Message</Label>
+    <Textarea name="message" id="message" required rows="4"></Textarea>
+  </InputWrapper>
+
+  <!-- Submit Button -->
+  <Button type="submit" class="w-full flex items-center justify-center gap-2">
+    Send Message
+  </Button>
 </form>
+
+<!-- Load the JavaScript validation & submission handler -->
+<script src="/scripts/contactForm.js" defer></script>
