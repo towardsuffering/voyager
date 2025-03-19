@@ -6,20 +6,23 @@ import Connor from "@images/testimonials/connor.webp";
 import Aniket from "@images/testimonials/aniket_p.jpg";
 import David from "@images/testimonials/david-g-davedev.png";
 import Damiano from "@images/testimonials/damiano.jpg";
+import Chuck from "@images/testimonials/chuck.jpg";
+import Brandon from "@images/testimonials/brandon.jpg";
+
 
 export const testimonialData: TestimonialItem[] = [
 	{
-		avatar: Connor,
-		name: "Connor D",
-		title: "JS Developer",
-		testimonial: `Chris has an incredible ability to listen and retain details. He remembered key project challenges and followed up with solutions that actually worked.`,
+		avatar: Chuck,
+		name: "Chuck G",
+		title: "Analytics Manager",
+		testimonial: `I've collaborated with Chris on business analytics masters projects. He consistently delivers creative solutions, thorough research, and reliable execution. His professionalism shines through in all interactions and deliverables. As an analytics leader, I'd gladly work with him professionally and recommend him for analytics and data science roles.`,
 	},
 
 	{
-		avatar: Damiano,
-		name: "Damiano L",
-		title: "Python Developer",
-		testimonial: `Chris doesn’t just answer questions—he asks the right ones. His problem-solving approach gets straight to the root of an issue.`,
+		avatar: Brandon,
+		name: "Brandon B",
+		title: "Strategic Sales Leader",
+		testimonial: `I have worked with Chris on multiple projects in the past. He was very easy to work with and was always putting in more work then was asked of him. In addition, he would always show up on time to meetings, take great notes and be well prepared. Chris not only puts in high quality work but he is someone that you can trust to get the job done! `,
 	},
 
 	{
