@@ -15,7 +15,7 @@ export const testimonialData: TestimonialItem[] = [
 		avatar: Chuck,
 		name: "Chuck G",
 		title: "Analytics Manager",
-		testimonial: `I've collaborated with Chris on business analytics masters projects. He consistently delivers creative solutions, thorough research, and reliable execution. His professionalism shines through in all interactions and deliverables. As an analytics leader, I'd gladly work with him professionally and recommend him for analytics and data science roles.`,
+		testimonial: `Chris consistently delivers creative solutions, thorough research, and reliable execution. His professionalism shines through in all interactions and deliverables. As an analytics leader, I'd gladly work with him professionally and recommend him for analytics and data science roles.`,
 	},
 
 	{
