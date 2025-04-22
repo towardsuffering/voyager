@@ -34,28 +34,32 @@
 	],
 	"experience": [
 		{
-			"title": "E-Commerce Associate",
-			"company": "Kroger",
-			"companyImage": "./index/experience/0/companyImage.png",
-			"dates": "April 2024 - Present",
-			"location": "Cincinnati, OH",
+			"title": "Founder, Data Solutions Orchestrator",
+			"company": "Root Labs",
+			"companyImage": "./index/experience/0/root-labs.png",
+			"dates": "May 2022 - Present",
+			"location": "Nashville, TN",
 			"responsibilities": [
-				"Select customer's online orders with 97% accuracy",
-				"Overcome people obstacles with safe trolly driving and a friendly attitude",
-				"Search inventory levels to indentify the number of units and deliveries for a specific product",
-				"Fulfull orders by delivering customer's groceries to their vechicles"
+				"Deliver fast insights by automating ingestion and modeling pipelines",
+				"Build aesthetically pleasing BI dashboards for visual storytelling",
+				"Align data initiatives with business and corporate strategy",
+				"Provide professional data ingestion, munging, and delivery",
+				"Deploy web browser applications with rapid development",
+				"Implement advanced ML/AI models and experimental design tests",
+				"Lead/support analytics and product teams with proven expertise",
+				"Lead/organize project initiatives efficiently "
 			]
 		},
 		{
-			"title": "Heart of House",
-			"company": "Velvet Taco",
-			"companyImage": "./index/experience/1/companyImage.png",
-			"dates": "April 2024 - Present",
-			"location": "Dallas, TX",
+			"title": "Data Analyst—Global Markets",
+			"company": "Socrates Platform",
+			"companyImage": "./index/experience/1/socrates.svg",
+			"dates": "February 2018 - November 2021",
+			"location": "Saint Petersburg, FL",
 			"responsibilities": [
-				"Provide professional cleaning services for front of house",
-				"Run overnight shifts--serving our guests as one of the only late-night dining options in town",
-				"Operate the POS and collect tips"
+				"Built and managed C# programs for data ingestion, enhancing data quality for 12K+ global subscribers",
+				"Controlled ETL processes in ASP.NET, optimizing the integration of datasets from MongoDB, Reuters, and S&P",
+				"Managed capital markets data pipelines, enabling $100K in monthly subscription revenue"
 			]
 		}
 	],
