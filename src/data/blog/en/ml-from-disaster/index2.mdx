@@ -1,0 +1,128 @@
+---
+title: "Titanic - Machine Learning From Disaster"
+description: "A complete walkthrough using Random Forest and Logistic Regression to predict survival on the Titanic dataset"
+date: "2025-03-26"
+tags: ["machine learning", "python", "data science", "classification", "titanic"]
+---
+
+# Titanic - Machine Learning from Disaster
+
+In this challenge, we ask you to build a **predictive model** that answers the question:  
+**“What sorts of people were more likely to survive?”**  
+We'll use passenger data (name, age, gender, socio-economic class, etc.) to explore this.
+
+```python
+# -*- coding: utf-8 -*-
+# Titanic - Machine Learning from Disaster
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Imports
+from sklearn.metrics import classification_report, accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+import re
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Read the training dataset
+train = pd.read_csv('https://raw.githubusercontent.com/towardsuffering/data/refs/heads/main/train.csv')
+
+# Encode 'Sex' and 'Embarked'
+sex = pd.get_dummies(train.Sex, prefix='Sex').iloc[:, 1:]
+embarked = pd.get_dummies(train.Embarked, prefix='Embarked')
+train = pd.concat([train, sex, embarked], axis=1)
+
+# Title extraction function
+def get_sirname(name):
+    if re.search(r'\b(mr|master|rev)\b', name, re.I):
+        return 1
+    elif re.search(r'\b(miss|ms)\b', name, re.I):
+        return 2
+    elif re.search(r'\b(mrs|jr)\b', name, re.I):
+        return 3
+    else:
+        return 0
+
+# Age groups and titles
+train['age_group'] = train['Age'].apply(lambda x: 0 if np.isnan(x) else int(int(x - 1)/10) + 1)
+train['sirname'] = train['Name'].apply(get_sirname, 1)
+
+# Feature selection
+features = np.array(['Pclass', 'Parch', 'Embarked_C', 'Embarked_Q', 'Sex_male', 'age_group', 'sirname'])
+
+# Random Forest Training
+clf = RandomForestClassifier()
+clf.fit(train[features], train['Survived'])
+
+# Feature importance plot
+importances = clf.feature_importances_
+sorted_idx = np.argsort(importances)
+padding = np.arange(len(features)) + 0.5
+plt.barh(padding, importances[sorted_idx], align='center')
+plt.yticks(padding, features[sorted_idx])
+plt.xlabel("Relative Importance")
+plt.title("Variable Importance")
+plt.show()
+
+# Evaluation on training set
+X = train.loc[:, features]
+Y = train.Survived
+Y_pred = clf.predict(X)
+
+print('Correctly predicted on TRAINING SET: {}, errors:{}'.format(sum(Y == Y_pred), sum(Y != Y_pred)))
+print(classification_report(Y, Y_pred))
+print('Accuracy on TRAINING set: {:.2f}'.format(accuracy_score(Y, Y_pred)))
+
+# Prepare test set
+test = pd.read_csv('https://raw.githubusercontent.com/towardsuffering/data/refs/heads/main/test.csv')
+sex = pd.get_dummies(test.Sex, prefix='Sex').iloc[:, 1:]
+embarked = pd.get_dummies(test.Embarked, prefix='Embarked')
+test = pd.concat([test, sex, embarked], axis=1)
+test['age_group'] = test['Age'].apply(lambda x: 0 if np.isnan(x) else int(int(x - 1)/10) + 1)
+test['sirname'] = test['Name'].apply(get_sirname, 1)
+
+X_new = test.loc[:, features]
+new_pred_class = clf.predict(X_new)
+pd.DataFrame({'PassengerId': test.PassengerId, 'Survived': new_pred_class}).set_index('PassengerId').to_csv('decisionTree.csv')
+
+# Evaluate on known test outcomes
+actual_test_results = pd.read_csv('https://raw.githubusercontent.com/towardsuffering/data/refs/heads/main/gender_submission.csv')
+actual_test_results = actual_test_results.sort_values('PassengerId')
+test_predictions = pd.DataFrame({'PassengerId': test.PassengerId, 'Survived': new_pred_class}).sort_values('PassengerId')
+
+print("TEST SET EVALUATION:")
+print(classification_report(actual_test_results.Survived, test_predictions.Survived))
+print('Accuracy on TEST set: {:.2f}'.format(accuracy_score(actual_test_results.Survived, test_predictions.Survived)))
+
+# Logistic Regression
+from sklearn.linear_model import LogisticRegression
+logreg = LogisticRegression()
+logreg.fit(X, Y)
+
+Y_pred = logreg.predict(X)
+print('Correctly predicted on TRAINING SET: {}, errors:{}'.format(sum(Y == Y_pred), sum(Y != Y_pred)))
+print(classification_report(Y, Y_pred))
+print('Accuracy on TRAINING set: {:.2f}'.format(accuracy_score(Y, Y_pred)))
+
+# Prepare test set again
+test = pd.read_csv('https://raw.githubusercontent.com/towardsuffering/data/refs/heads/main/test.csv')
+test['Sex_male'] = test.Sex.map({'female': 0, 'male': 1})
+embarked = pd.get_dummies(test.Embarked, prefix='Embarked', )
+test = pd.concat([test, embarked], axis=1)
+test['age_group'] = test['Age'].apply(lambda x: 0 if np.isnan(x) else int(int(x - 1)/10) + 1)
+test['sirname'] = test['Name'].apply(get_sirname, 1)
+
+X_new = test.loc[:, features]
+new_pred_class = logreg.predict(X_new)
+
+pd.DataFrame({'PassengerId': test.PassengerId, 'Survived': new_pred_class}).set_index('PassengerId').to_csv('logreg.csv')
+
+actual_test_results = pd.read_csv('https://raw.githubusercontent.com/towardsuffering/data/refs/heads/main/gender_submission.csv')
+actual_test_results = actual_test_results.sort_values('PassengerId')
+test_predictions = pd.DataFrame({'PassengerId': test.PassengerId, 'Survived': new_pred_class}).sort_values('PassengerId')
+
+print("TEST SET EVALUATION:")
+print(classification_report(actual_test_results.Survived, test_predictions.Survived))
+print('Accuracy on TEST set: {:.2f}'.format(accuracy_score(actual_test_results.Survived, test_predictions.Survived)))

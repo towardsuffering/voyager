@@ -3,7 +3,7 @@
  * * pricing sections with toggle for monthly or yearly payments
  * This is designed for 3 pricing items, but can be modified to support more
  */
- import { getRelativeLocaleUrl } from "astro:i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { Icon } from "astro-icon/components";
 
 // components
@@ -35,40 +35,61 @@ const plans: PricingPlan[] = [
         name: "ML Career Starter",
         monthlyPrice: 49,
         yearlyPrice: 99,
-        description: "Instant access to essential ML career resources and templates.",
+        description: "Instant access to essential ML career resources for those starting their journey.",
+        tagline: "The Foundation Builder",
+        theme: "innovator",
         features: [
             { text: "ML Resume Template Pack (5 proven formats)", included: true },
             { text: "AI Skills Assessment Worksheet", included: true },
             { text: "2023 ML Industry Trends Report", included: true },
             { text: "Beginner ML Project Portfolio Templates", included: true },
             { text: "30-minute consultation by request", included: true },
+            { text: "Real ML Success Stories: The Messy Truth", included: true, highlight: true },
+            { text: "Opportunity Spotting Mini-Course", included: true },
+            { text: "ML Career Resilience Toolkit", included: true },
+            { text: "Access to Monthly ML Career Trends Newsletter", included: true },
         ]
     },
     {
         name: "ML Professional Package",
         monthlyPrice: 149,
         yearlyPrice: 299,
-        description: "Complete toolkit for ML-focused career advancement with proven resources.",
+        description: "For those ready to leverage ML to break through career plateaus and accelerate growth.",
         isPopular: true,
+        tagline: "The Career Accelerator",
+        theme: "accelerator",
         features: [
             { text: "Everything in ML Career Starter", included: true },
-            { text: "ML Career Advancement Blueprint (PDF)", included: true },
+            { text: "ML Career Advancement Strategy Guide", included: true },
             { text: "Technical ML Interview Question Library", included: true },
             { text: "AI Tools Implementation Guide (15 industries)", included: true },
             { text: "45-minute consultation by request", included: true },
+            { text: "Career Serendipity Framework™", included: true, highlight: true },
+            { text: "ML Project Failure Recovery Playbook", included: true },
+            { text: "Private Community Access (ML Professionals Network)", included: true, highlight: true },
+            { text: "Bi-Monthly Case Study Deep Dives", included: true },
+            { text: "ML Insight Generator Tool (Uncover Hidden Opportunities)", included: true },
         ]
     },
     {
         name: "ML Innovation Leader",
         monthlyPrice: 299,
         yearlyPrice: 599,
-        description: "Premium ML leadership resources for business transformation.",
+        description: "For visionaries ready to transform their careers by leading ML initiatives that matter.",
+        tagline: "The Game Changer",
+        theme: "leader",
         features: [
             { text: "Everything in ML Professional Package", included: true },
             { text: "ML Business Strategy Playbook", included: true },
             { text: "AI Team Development Framework", included: true },
             { text: "ML Implementation Case Studies (12 examples)", included: true },
             { text: "Two 45-minute consultations by request", included: true },
+            { text: "ML Leadership Mastermind Group (Monthly Sessions)", included: true, highlight: true },
+            { text: "Career-Defining ML Project Selector Tool", included: true, highlight: true },
+            { text: "Quarterly 1-on-1 Career Strategy Session", included: true },
+            { text: "Executive Stakeholder Management Templates", included: true },
+            { text: "ML Thought Leadership Content Creation Framework", included: true },
+            { text: "Priority Access to New ML Career Resources", included: true },
         ]
     }
 ];
@@ -83,12 +104,6 @@ const plans: PricingPlan[] = [
 	<div class="site-container">
 		<h2 class="h2 mb-4 text-center">Accelerate Your Career With ML</h2>
 		<p class="description mb-16 text-center text-lg">Customer satisfaction is <span style="font-weight: bold; color: #0066ff; text-transform: uppercase;">guaranteed</span>  <strong style="text-decoration: underline;">or your money back</strong> 💸</p>
-
-		<!-- <div class="mb-16 flex items-center justify-center gap-4">
-			<span class="description">Hourly</span>
-			<Switch variant="primary" id="pricing-three-cards__toggle" size="lg" />
-			<span class="description">Monthly <span class="text-primary text-sm">(Save 20%)</span></span>
-		</div> -->
 
 		<div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-3">
 			{
