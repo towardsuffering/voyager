@@ -1,19 +1,18 @@
 ---
-title: "Lasso vs Ridge Regression: A Comparative Guide"
+title: "Titanic: Machine Learning from Disaster"
 description: >-
-  Explore the differences between Lasso and Ridge Regression, two popular regularization techniques in linear models. Learn about their strengths, weaknesses, and implementation examples in Python.
+  Explore how to predict survival on the Titanic using machine learning techniques like Random Forest and Logistic Regression. Learn about feature engineering, model evaluation, and implementation examples in Python.
 draft: false
 authors:
   - main-author
 pubDate: 2025-02-08
-heroImage: ../lasso-v-ridge/lasso.png
+heroImage: ../ml-from-disaster/titanic.png
 categories:
   - machine-learning
   - python
   - data-science
+  - classification
 ---
-
-# Titanic - Machine Learning from Disaster
 
 You’ve probably heard the story — or seen the movie. The Titanic was one of the most infamous maritime disasters in history, claiming over 1,500 lives when it sank in 1912.
 
@@ -59,21 +58,6 @@ Before jumping into feature engineering and modeling, it’s good practice to lo
   Child = daughter, son, stepdaughter, stepson  
   (Some children traveled only with a nanny — therefore `parch = 0` for them.)
 
----
-
-"""
-
-# Replace the original intro with the new version
-old_intro_start = "# Titanic - Machine Learning from Disaster"
-new_mdx_content = updated_path.read_text()
-split_parts = new_mdx_content.split(old_intro_start, maxsplit=1)
-final_content = split_parts[0] + intro_and_dict + split_parts[1].split("---", 1)[-1]
-
-# Save to new file
-final_mdx_path = Path("/mnt/data/titanic_with_intro_and_dictionary.mdx")
-final_mdx_path.write_text(final_content)
-
-final_mdx_path
 ---
 
 ## Step 1: Importing Libraries
