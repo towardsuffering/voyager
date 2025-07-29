@@ -34,20 +34,18 @@
 	],
 	"experience": [
 		{
-			"title": "Founder, Data Solutions Orchestrator",
+			"title": "Founder, AI/Data Engineer",
 			"company": "Root Labs",
 			"companyImage": "./index/experience/0/root-labs.png",
-			"dates": "May 2022 - Present",
+			"dates": "May 2023 - Present",
 			"location": "Nashville, TN",
 			"responsibilities": [
-				"Deliver fast insights by automating ingestion and modeling pipelines",
-				"Build aesthetically pleasing BI dashboards for visual storytelling",
-				"Align data initiatives with business and corporate strategy",
-				"Provide professional data ingestion, munging, and delivery",
-				"Deploy web browser applications with rapid development",
-				"Implement advanced ML/AI models and experimental design tests",
-				"Lead/support analytics and product teams with proven expertise",
-				"Lead/organize project initiatives efficiently "
+				"Engineered a Python database ingestion pipeline application with optimized append functions to reduce financial data subscription costs by 79% (from $118 to $25 monthly) through selective data retrieval and containerized PostgreSQL storage",
+				"Orchestrated a virtual multi-environment Docker infrastructure using Compose for dev/prod deployments and Swarm for orchestration, creating a unified development environment that ensures consistent workflows across cross-functional teams.",
+				"Developed a chart-to-text pipeline leveraging the Gemini LLM API to automatically convert stock market visualizations into descriptive narratives, enhancing trader comprehension of technical patterns.",
+				"Architected SQLAlchemy ORM framework to systematically transform nested API responses into optimized relational tables, ensuring consistent data types and relationships across all ingestion processes.",
+				"Implemented hybrid cloud architecture using Windows Server 2022 as a central hub integrated with Azure services, enabling flexible resource scaling and distributed computing while maintaining control over critical onpremise operations",
+				"Successfully recruited and retained a 4-person team of skilled professionals through strategic networking and relationship-building (zero recruiting budget), driving collaborative innovation that delivered key project milestones on schedule."
 			]
 		},
 		{
@@ -57,15 +55,44 @@
 			"dates": "February 2018 - November 2021",
 			"location": "Saint Petersburg, FL",
 			"responsibilities": [
-				"Built and managed C# programs for data ingestion, enhancing data quality for 12K+ global subscribers",
-				"Controlled ETL processes in ASP.NET, optimizing the integration of datasets from MongoDB, Reuters, and S&P",
-				"Managed capital markets data pipelines, enabling $100K in monthly subscription revenue"
+				"Managed daily operations of e-commerce platform by monitoring automated systems and ensuring seamless website updates, maintaining business continuity and system reliability as de facto operations manager.",
+				"Maintained round-the-clock availability as primary systems administrator, safeguarding data center operations against critical failures and environmental threats while minimizing downtime for revenue-generating online platforms.",
+				"Collaborated with legendary economist Martin Armstrong, developer of foundational AI-driven economic modeling since the 1970s, gaining rare insights into advanced predictive analytics while supporting the Socrates platform.",
+				"Ran critical data importer and data updater workflows processing 200GB+ of daily financial data through ASP.NET environment, coordinating C# and VB.NET components to ensure seamless integration and maintain database integrity.",
+				"Managed capital markets data pipelines, enabling $100K in monthly subscription revenue",
+				"Coordinated technical partnerships with major financial data vendors (S&P Global, Reuters, and CSI Data) and MongoDB Atlas administration, ensuring seamless integration between external feeds and internal database systems.",
+				"Led a geographically distributed team of 4 backend developers across multiple time zones, implementing agile workflows and communication protocols that accelerated project delivery while ensuring code quality and knowledge sharing."
+			]
+		},
+		{
+			"title": "Data Quality Analyst—US Markets",
+			"company": "Intrinio",
+			"companyImage": "./index/experience/1/intrinio.svg",
+			"dates": "May 2017 - November 2017",
+			"location": "Saint Petersburg, FL",
+			"responsibilities": [
+				"Led NLP initiative under CFO guidance to automate XBRL tag classification into financial statement line-items, implementing tidy text principles, TF-IDF vectorization, and n-gram analysis to improve data accuracy by 15%.",
+				"Performed detailed data validation and manual corrections using internal dashboard interface, enhancing financial data accuracy by 10% through systematic quality control of 10-K, 10-Q, and 8-K filings.",
+				"Collaborated directly with C-suite executives (CEO, CFO, CMO) in an agile team environment, consistently contributing prepared insights and strategic questions during weekly team meetings to drive data quality initiatives."
+			]
+		},
+		{
+			"title": "Data Analyst—Consumer Lending Intern",
+			"company": "Wells Fargo",
+			"companyImage": "./index/experience/1/Wells_Fargo_Bank.svg",
+			"dates": "May 2016 - August 2016",
+			"location": "Chandler, AZ",
+			"responsibilities": [
+				"Collaborated cross-functionally within Consumer Financial Services with underwriting, fraud, fulfillment, call center, and analytics teams to successfully process 400,000+ monthly credit card applications, ensuring seamless workflow coordination across departments.",
+				"Streamlined underwriting processes using Microsoft SQL Server and machine learning models (logistic regression, decision trees) via the Provenir platform, achieving a 30% reduction in review time and hundreds of thousands in annual labor cost savings.",
+				"Engaged in an intensive corporate leadership development program alongside senior executives, demonstrating cross-functional problem-solving by facilitating trade agreements between teams during strategic simulation exercises."
 			]
 		}
 	],
+	
 	"hardSkills": [
 		{
-			"skill": "Excel/OpenOffice",
+			"skill": "Docker/Cloud Ops/Data Ops",
 			"percentage": 90
 		},
 		{
@@ -81,7 +108,7 @@
 			"percentage": 75
 		},
 		{
-			"skill": "Spark",
+			"skill": "Spark/Distributed Computing",
 			"percentage": 30
 		}
 	],
@@ -97,6 +124,14 @@
 		{
 			"skill": "Remembering Names",
 			"icon": "☝️"
+		},
+		{
+			"skill": "Needs Assessments",
+			"icon": "🧩"
+		},
+		{
+			"skill": "Team Building",
+			"icon": "🔗"
 		}
 	],
 	"languages": [

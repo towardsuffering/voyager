@@ -11,7 +11,7 @@ const siteData: SiteDataProps = {
 	// Your information for blog post purposes
 	author: {
 		name: "Chris Rotunno",
-		email: "chrisrotunno@icloud.com",
+		email: "chris.rotunno@irootlabs.tech",
 		twitter: "Cosmic_Themes",
 	},
 
